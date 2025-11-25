@@ -38,7 +38,6 @@ const LoginPage = () => {
     if (stored) setFormData(JSON.parse(stored));
   }, []);
 
-  // For toast and redirect after success
   useEffect(() => {
     if (showToast.visible && !showToast.isError) {
       const timer = setTimeout(() => {
@@ -50,7 +49,7 @@ const LoginPage = () => {
   }, [showToast, navigate]);
 
   const toggleShowPassword = () => setShowPassword(prev => !prev);
-  
+
   const handleChange = ({ target: { name, value, type, checked } }) =>
     setFormData(prev => ({
       ...prev,
@@ -68,7 +67,6 @@ const LoginPage = () => {
       if (res.status === 200 && res.data.success && res.data.token) {
         localStorage.setItem('authToken', res.data.token);
         
-        // Store user information properly
         const userInfo = {
           email: formData.email,
           token: res.data.token,
@@ -77,7 +75,6 @@ const LoginPage = () => {
         };
         localStorage.setItem('user', JSON.stringify(userInfo));
 
-        // remember me
         formData.rememberMe
           ? localStorage.setItem('loginData', JSON.stringify(formData))
           : localStorage.removeItem('loginData');
@@ -104,14 +101,14 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#121212] via-[#1A1A1A] to-[#121212] p-4 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white via-[#FFF7E5] to-white p-4 relative overflow-hidden">
       {/* Background Glow Effects */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#FF4C29]/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#FFD369]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#FF4C29]/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#FFD369]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
 
       {showToast.visible && <AwesomeToast message={showToast.message} icon={showToast.icon} isError={showToast.isError} />}
 
-      <div className="w-full max-w-md backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl p-8 space-y-6 relative z-10">
+      <div className="w-full max-w-md bg-white border border-gray-200 rounded-3xl shadow-2xl p-8 space-y-6 relative z-10">
         <h1 className="text-3xl font-bold text-center bg-gradient-to-r from-[#FF4C29] via-[#FF6B35] to-[#FFD369] bg-clip-text text-transparent" style={{ fontFamily: "'Playfair Display', serif" }}>
           Welcome Back
         </h1>
@@ -119,14 +116,14 @@ const LoginPage = () => {
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* Email Field */}
           <div className='relative'>
-            <FaUser className='absolute top-1/2 transform -translate-y-1/2 left-4 text-[#FFD369] pointer-events-none' />
+            <FaUser className='absolute top-1/2 transform -translate-y-1/2 left-4 text-[#FF4C29] pointer-events-none' />
             <input
               type='email'
               name='email'
               placeholder='Email'
               value={formData.email}
               onChange={handleChange}
-              className='w-full px-4 py-3 pl-12 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl text-white placeholder-[#B3B3B3] focus:outline-none focus:border-[#FFD369]/50 transition-all duration-300'
+              className='w-full px-4 py-3 pl-12 backdrop-blur-xl bg-white border border-gray-300 rounded-2xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#FFD369]/50 transition-all duration-300'
               style={{ fontFamily: "'Lato', sans-serif" }}
               required
             />
@@ -134,21 +131,21 @@ const LoginPage = () => {
 
           {/* Password Field */}
           <div className='relative'>
-            <FaLock className='absolute top-1/2 transform -translate-y-1/2 left-4 text-[#FFD369] pointer-events-none' />
+            <FaLock className='absolute top-1/2 transform -translate-y-1/2 left-4 text-[#FF4C29] pointer-events-none' />
             <input
               type={showPassword ? 'text' : 'password'}
               name='password'
               placeholder='Password'
               value={formData.password}
               onChange={handleChange}
-              className='w-full px-4 py-3 pl-12 pr-12 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl text-white placeholder-[#B3B3B3] focus:outline-none focus:border-[#FFD369]/50 transition-all duration-300'
+              className='w-full px-4 py-3 pl-12 pr-12 backdrop-blur-xl bg-white border border-gray-300 rounded-2xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#FFD369]/50 transition-all duration-300'
               style={{ fontFamily: "'Lato', sans-serif" }}
               required
             />
             <button
               type='button'
               onClick={toggleShowPassword}
-              className='absolute top-1/2 right-4 transform -translate-y-1/2 text-[#FFD369] hover:text-[#FF4C29] transition-colors'
+              className='absolute top-1/2 right-4 transform -translate-y-1/2 text-[#FF4C29] hover:text-[#FFD369] transition-colors'
             >
               {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
             </button>
@@ -162,9 +159,9 @@ const LoginPage = () => {
                 name='rememberMe'
                 checked={formData.rememberMe}
                 onChange={handleChange}
-                className='form-checkbox h-5 w-5 text-[#FF4C29] bg-white/10 border-[#FFD369] rounded focus:ring-[#FFD369]'
+                className='form-checkbox h-5 w-5 text-[#FF4C29] bg-white border-[#FFD369] rounded focus:ring-[#FFD369]'
               />
-              <span className='ml-3 text-[#F5F5F5]' style={{ fontFamily: "'Lato', sans-serif" }}>Remember me</span>
+              <span className='ml-3 text-gray-700' style={{ fontFamily: "'Lato', sans-serif" }}>Remember me</span>
             </label>
           </div>
 
@@ -179,8 +176,8 @@ const LoginPage = () => {
         </form>
 
         {/* Signup Link */}
-        <div className="mt-6 text-center">
-          <Link to="/signup" className="text-[#FFD369] hover:text-[#FF4C29] transition-colors flex items-center justify-center gap-2 font-semibold" style={{ fontFamily: "'Lato', sans-serif" }}>
+        <div className="mt-6 text-center text-gray-600">
+          <Link to="/signup" className="text-[#FF4C29] hover:text-[#FFD369] transition-colors flex items-center justify-center gap-2 font-semibold" style={{ fontFamily: "'Lato', sans-serif" }}>
             <FaUserPlus />
             <span>Create new Account</span>
           </Link>
@@ -191,4 +188,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-

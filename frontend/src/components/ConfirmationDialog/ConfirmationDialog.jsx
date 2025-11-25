@@ -20,34 +20,34 @@ const ConfirmationDialog = ({
       case 'danger':
         return {
           icon: <FiTrash2 className="text-2xl" />,
-          iconBg: "bg-red-500/20",
-          iconColor: "text-red-400",
+          iconBg: "bg-red-100",
+          iconColor: "text-red-600",
           confirmBg: "bg-red-600 hover:bg-red-700",
-          borderColor: "border-red-500/30"
+          borderColor: "border-red-300"
         };
       case 'info':
         return {
           icon: <FiAlertTriangle className="text-2xl" />,
-          iconBg: "bg-blue-500/20",
-          iconColor: "text-blue-400",
+          iconBg: "bg-blue-100",
+          iconColor: "text-blue-600",
           confirmBg: "bg-blue-600 hover:bg-blue-700",
-          borderColor: "border-blue-500/30"
+          borderColor: "border-blue-300"
         };
       case 'success':
         return {
           icon: <FiCheckCircle className="text-2xl" />,
-          iconBg: "bg-green-500/20",
-          iconColor: "text-green-400",
+          iconBg: "bg-green-100",
+          iconColor: "text-green-600",
           confirmBg: "bg-green-600 hover:bg-green-700",
-          borderColor: "border-green-500/30"
+          borderColor: "border-green-300"
         };
       default: // warning
         return {
           icon: <FiAlertTriangle className="text-2xl" />,
-          iconBg: "bg-amber-500/20",
-          iconColor: "text-amber-400",
+          iconBg: "bg-amber-100",
+          iconColor: "text-amber-600",
           confirmBg: "bg-amber-600 hover:bg-amber-700",
-          borderColor: "border-amber-500/30"
+          borderColor: "border-amber-300"
         };
     }
   };
@@ -67,7 +67,7 @@ const ConfirmationDialog = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          className="absolute inset-0 bg-white/40 backdrop-blur-sm"
           onClick={onClose}
         />
 
@@ -77,12 +77,12 @@ const ConfirmationDialog = ({
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
           transition={{ type: "spring", duration: 0.3 }}
-          className={`relative bg-gray-800/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border-2 ${borderColor} max-w-md w-full`}
+          className={`relative bg-white rounded-2xl p-6 shadow-2xl border-2 ${borderColor} max-w-md w-full`}
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-gray-400 hover:text-gray-300 transition-colors p-1"
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors p-1"
           >
             <FiX className="text-xl" />
           </button>
@@ -95,12 +95,12 @@ const ConfirmationDialog = ({
           </div>
 
           {/* Title */}
-          <h3 className="text-xl font-bold text-white mb-2">
+          <h3 className="text-xl font-bold text-gray-800 mb-2">
             {title}
           </h3>
 
           {/* Message */}
-          <p className="text-gray-300 mb-6 leading-relaxed">
+          <p className="text-gray-600 mb-6 leading-relaxed">
             {message}
           </p>
 
@@ -111,7 +111,7 @@ const ConfirmationDialog = ({
               whileTap={{ scale: 0.98 }}
               onClick={onClose}
               disabled={isLoading}
-              className="px-4 py-2 bg-gray-700/50 text-gray-300 rounded-lg hover:bg-gray-700/70 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {cancelText}
             </motion.button>
@@ -147,4 +147,3 @@ const ConfirmationDialog = ({
 };
 
 export default ConfirmationDialog;
-

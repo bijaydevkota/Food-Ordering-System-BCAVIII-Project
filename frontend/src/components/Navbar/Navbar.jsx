@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { GiChefToque } from "react-icons/gi";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import {
   FiHome,
@@ -7,14 +6,14 @@ import {
   FiStar,
   FiPhone,
   FiShoppingCart,
-  FiLogOut,
   FiKey,
-  FiPackage, 
+  FiPackage,
 } from "react-icons/fi";
 import { useCart } from "../../CartContext/CartContext";
 import { motion, AnimatePresence } from "framer-motion";
 import NotificationBar from "../NotificationBar/NotificationBar";
 import UserProfileDropdown from "../UserProfileDropdown/UserProfileDropdown";
+import Logo from "../../assets/logo.png"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,11 +37,8 @@ const Navbar = () => {
   };
 
   const handleLogoClick = () => {
-    // Navigate to home page
     navigate("/");
-    // Scroll to top smoothly
     window.scrollTo({ top: 0, behavior: "smooth" });
-    // Close mobile menu if open
     setIsOpen(false);
   };
 
@@ -54,8 +50,7 @@ const Navbar = () => {
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => navigate("/login")}
-        className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-[#FF4C29] to-[#FFD369] hover:from-[#FF6B35] hover:to-[#FFD369] text-white transition-all duration-300 shadow-lg hover:shadow-[0_8px_24px_rgba(255,76,41,0.4)]"
-        style={{ fontFamily: "'Inter', sans-serif" }}
+        className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-pink-400 to-yellow-300 hover:from-pink-500 hover:to-yellow-400 text-gray-800 transition-all duration-300 shadow-lg"
       >
         <FiKey className="text-lg" />
         <span className="font-semibold">Login</span>
@@ -73,71 +68,58 @@ const Navbar = () => {
           navigate("/login");
           setIsOpen(false);
         }}
-        className="w-full flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#FF4C29] to-[#FFD369] text-white transition-all duration-300 shadow-lg"
-        style={{ fontFamily: "'Inter', sans-serif" }}
+        className="w-full flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-pink-400 to-yellow-300 text-gray-800 transition-all duration-300 shadow-lg"
       >
-        <FiKey className="text-lg" />
+        <FiKey className="text-lg text-gray-800" />
         <span className="font-semibold">Login</span>
       </motion.button>
     );
   };
 
   const navLinks = [
-    { name: "Home", to: "/", icon: <FiHome /> }, // ✅ changed href → to
+    { name: "Home", to: "/", icon: <FiHome /> },
     { name: "Menu", to: "/menu", icon: <FiBook /> },
     { name: "About", to: "/about", icon: <FiStar /> },
     { name: "Contact", to: "/contact", icon: <FiPhone /> },
-    ...(isAuthenticated
-      ? [{ name: "My Orders", to: "/myorder", icon: <FiPackage /> }]
-      : []),
+    ...(isAuthenticated ? [{ name: "My Orders", to: "/myorder", icon: <FiPackage /> }] : []),
   ];
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="backdrop-blur-xl bg-[#121212]/95 border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] sticky top-0 z-50"
+      className="backdrop-blur-xl bg-white/90 border-b border-gray-200 shadow-lg sticky top-0 z-50"
     >
-      {/* Premium Top Accent Line */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#FF4C29] to-transparent"></div>
+      {/* Top Accent Line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-pink-400 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between items-center h-20">
-          {/* Premium Logo Section */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="flex-shrink-0 flex items-center gap-3 group cursor-pointer"
-            onClick={handleLogoClick}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <motion.div
-              whileHover={{ rotate: 12, scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="w-12 h-12 bg-gradient-to-br from-[#FF4C29] to-[#FFD369] rounded-2xl flex items-center justify-center shadow-lg"
-            >
-              <GiChefToque className="text-2xl text-white" />
-            </motion.div>
-            <div className="flex flex-col">
-              <span
-                className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-[#FF4C29] via-[#FF6B35] to-[#FFD369] bg-clip-text text-transparent tracking-tight"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                Pet Puja
-              </span>
-              <div className="h-[2px] bg-gradient-to-r from-[#FF4C29] via-[#FFD369] to-transparent w-full mt-1 rounded-full"></div>
-            </div>
-          </motion.div>
+          {/* Logo */}
+         <motion.div
+  initial={{ opacity: 0, x: -20 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ delay: 0.2, duration: 0.6 }}
+  className="flex-shrink-0 flex items-center gap-3 group cursor-pointer"
+  onClick={handleLogoClick}
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+>
+  <div className="flex items-center gap-3">
+             <img src={Logo} alt="Pet Puja Logo" className="w-32 h-32 object-contain" />
+            
+           </div>
+    
+</motion.div>
 
-          {/* Premium Desktop Navigation */}
-          <motion.div 
+
+          {/* Desktop Menu */}
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="hidden lg:flex items-center gap-1 flex-1 justify-end"
+            className="hidden lg:flex items-center gap-1 flex-1 justify-end text-gray-800"
           >
             {navLinks.map((link, index) => (
               <NavLink
@@ -146,96 +128,70 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `group relative px-3 xl:px-4 py-2.5 flex items-center gap-2 rounded-2xl transition-all duration-300 text-sm xl:text-base ${
                     isActive
-                      ? "backdrop-blur-xl bg-white/10 border border-[#FF4C29]/50 text-[#FFD369] shadow-lg"
-                      : "text-[#B3B3B3] hover:text-[#F5F5F5] hover:bg-white/5"
+                      ? "backdrop-blur-xl bg-gradient-to-r from-pink-100 to-yellow-100 border border-pink-300 text-pink-600 shadow-md"
+                      : "text-gray-600 hover:text-gray-800 hover:bg-gray-100"
                   }`
                 }
-                style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {({ isActive }) => (
                   <>
-                    <motion.span 
-                      whileHover={{ scale: 1.2, rotate: 5 }}
-                      className={isActive ? "text-[#FFD369]" : "text-[#FF4C29]"}
-                    >
-                      {link.icon}
-                    </motion.span>
+                    <span className={isActive ? "text-pink-500" : "text-pink-400"}>{link.icon}</span>
                     <span className="font-medium">{link.name}</span>
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeTab"
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#FF4C29] to-[#FFD369] rounded-full"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                      />
-                    )}
                   </>
                 )}
               </NavLink>
             ))}
-            
-            <div className="flex items-center gap-2 xl:gap-3 ml-4 xl:ml-6">
-              {/* Premium Cart Button */}
+
+            <div className="flex items-center gap-3 ml-4">
+              {/* Cart */}
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                 <NavLink
                   to="/cart"
-                  className="relative p-3 backdrop-blur-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#FFD369]/50 rounded-2xl transition-all duration-300 shadow-lg flex items-center justify-center no-underline"
-                  style={{ textDecoration: 'none' }}
+                  className="relative p-3 bg-gray-100 hover:bg-gray-200 border border-gray-200 rounded-2xl transition-all duration-300 flex items-center justify-center"
                 >
-                  <FiShoppingCart className="text-xl text-[#F5F5F5]" />
+                  <FiShoppingCart className="text-xl text-gray-700" />
                   {totalItems > 0 && (
-                    <motion.span 
+                    <motion.span
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      className="absolute -top-2 -right-2 bg-gradient-to-r from-[#FF4C29] to-[#FFD369] text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shadow-lg"
+                      className="absolute -top-2 -right-2 bg-gradient-to-r from-pink-400 to-yellow-300 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shadow-md"
                     >
                       {totalItems}
                     </motion.span>
                   )}
                 </NavLink>
               </motion.div>
-              
-              {/* Notification Bar - Only show for authenticated users */}
+
+              {/* Notification */}
               {isAuthenticated && (
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
+                <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 }}>
                   <NotificationBar />
                 </motion.div>
               )}
-              
+
               {renderDesktopAuthButton()}
             </div>
           </motion.div>
 
-          {/* Premium Hamburger Menu Button */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="lg:hidden flex items-center"
-          >
+          {/* Hamburger */}
+          <motion.div className="lg:hidden flex items-center">
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="p-3 backdrop-blur-xl bg-white/5 border border-white/10 hover:border-[#FF4C29]/50 rounded-2xl transition-all duration-300 shadow-lg"
+              className="p-3 bg-gray-100 hover:bg-gray-200 border border-gray-200 rounded-2xl transition-all duration-300"
             >
               <div className="space-y-1.5 w-6">
                 <motion.span
                   animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="block w-full h-0.5 bg-[#FFD369] rounded-full"
+                  className="block w-full h-0.5 bg-pink-400 rounded-full"
                 />
                 <motion.span
                   animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-                  transition={{ duration: 0.2 }}
-                  className="block w-full h-0.5 bg-[#FFD369] rounded-full"
+                  className="block w-full h-0.5 bg-pink-400 rounded-full"
                 />
                 <motion.span
                   animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="block w-full h-0.5 bg-[#FFD369] rounded-full"
+                  className="block w-full h-0.5 bg-pink-400 rounded-full"
                 />
               </div>
             </motion.button>
@@ -243,7 +199,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Premium Mobile Menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -251,7 +207,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden backdrop-blur-xl bg-[#1A1A1A]/95 border-t border-white/10"
+            className="lg:hidden bg-white/95 border-t border-gray-200 backdrop-blur-xl"
           >
             <div className="px-4 py-6 space-y-2">
               {navLinks.map((link, index) => (
@@ -267,64 +223,43 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       `flex items-center gap-3 px-5 py-3 rounded-2xl transition-all duration-300 ${
                         isActive
-                          ? "backdrop-blur-xl bg-white/10 border border-[#FF4C29]/50 text-[#FFD369]"
-                          : "text-[#B3B3B3] hover:text-[#F5F5F5] hover:bg-white/5"
+                          ? "bg-gradient-to-r from-pink-100 to-yellow-100 border border-pink-300 text-pink-600"
+                          : "text-gray-600 hover:text-gray-800 hover:bg-gray-100"
                       }`
                     }
-                    style={{ fontFamily: "'Inter', sans-serif" }}
                   >
-                    {({ isActive }) => (
-                      <>
-                        <span className={isActive ? "text-[#FFD369]" : "text-[#FF4C29]"}>
-                          {link.icon}
-                        </span>
-                        <span className="font-medium">{link.name}</span>
-                      </>
-                    )}
+                    <span className="text-pink-400">{link.icon}</span>
+                    <span className="font-medium text-gray-800">{link.name}</span>
                   </NavLink>
                 </motion.div>
               ))}
-              
-              <div className="pt-4 mt-4 border-t border-white/10 space-y-3">
-                {/* Notification Bar for Mobile - Only show for authenticated users */}
+
+              <div className="pt-4 mt-4 border-t border-gray-200 space-y-3">
                 {isAuthenticated && (
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: navLinks.length * 0.1 }}
-                    className="px-5 py-3"
-                  >
+                  <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: navLinks.length * 0.1 }} className="px-5 py-3">
                     <NotificationBar />
                   </motion.div>
                 )}
-                
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navLinks.length * 0.1 }}
-                >
+
+                <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: (navLinks.length + 1) * 0.1 }}>
                   <NavLink
                     to="/cart"
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-between px-5 py-3 backdrop-blur-xl bg-white/5 border border-white/10 hover:border-[#FFD369]/50 text-[#F5F5F5] rounded-2xl transition-all duration-300"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
+                    className="flex items-center justify-between px-5 py-3 bg-gray-100 hover:bg-gray-200 border border-gray-200 text-gray-700 rounded-2xl transition-all duration-300"
                   >
                     <div className="flex items-center gap-3">
-                      <FiShoppingCart className="text-[#FF4C29]" />
-                      <span className="font-medium">Cart</span>
+                      <FiShoppingCart className="text-pink-400" />
+                      <span className="font-medium text-gray-800">Cart</span>
                     </div>
                     {totalItems > 0 && (
-                      <span className="bg-gradient-to-r from-[#FF4C29] to-[#FFD369] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                      <span className="bg-gradient-to-r from-pink-400 to-yellow-300 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
                         {totalItems}
                       </span>
                     )}
                   </NavLink>
                 </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: (navLinks.length + 1) * 0.1 }}
-                >
+
+                <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: (navLinks.length + 2) * 0.1 }}>
                   {renderMobileAuthButton()}
                 </motion.div>
               </div>
@@ -332,7 +267,6 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
     </motion.nav>
   );
 };

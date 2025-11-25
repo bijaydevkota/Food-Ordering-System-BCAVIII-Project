@@ -14,7 +14,7 @@ const OurMenu = ({ searchQuery = '' }) => {
   const [isSearching, setIsSearching] = useState(false);
 
   const buildImageUrl = (path) => {
-    if (!path) return "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMyYTJhMmEiLz48cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSIjM2EzYTNhIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMiIgcng9IjgiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMjAiIGZpbGw9IiM2NjYiLz48cGF0aCBkPSJNNjAgMTQwIEwxMDAgMTAwIEwxNDAgMTQwIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHRleHQgeD0iMTAwIiB5PSIxNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5OTkiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiI+Tm8gSW1hZ2U8L3RleHQ+PC9zdmc+";
+    if (!path) return "https://via.placeholder.com/200x200?text=No+Image";
     return path.startsWith("http") ? path : `${API_BASE}/uploads/${String(path).replace(/^\/?uploads\//, "")}`;
   };
 
@@ -57,10 +57,10 @@ const OurMenu = ({ searchQuery = '' }) => {
   const displayItems = isSearching ? searchResults : (menuData[activeCategory] ?? []).slice(0, 12);
 
   return (
-    <div className="relative bg-gradient-to-b from-[#121212] via-[#1A1A1A] to-[#121212] text-white px-4 py-20 overflow-hidden">
+    <div className="relative bg-gradient-to-b from-white via-[#fefce8] to-white text-gray-900 px-4 py-20 overflow-hidden">
       {/* Background Glow Effects */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF4C29]/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FFD369]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-pink-200/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
@@ -70,10 +70,10 @@ const OurMenu = ({ searchQuery = '' }) => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-[#FF4C29] via-[#FF6B35] to-[#FFD369] bg-clip-text text-transparent" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-pink-500 via-yellow-400 to-green-400 bg-clip-text text-transparent" style={{ fontFamily: "'Playfair Display', serif" }}>
             {isSearching ? `Search Results for "${searchQuery}"` : "Our Complete Menu"}
           </h2>
-          <p className="text-[#B3B3B3] text-lg sm:text-xl" style={{ fontFamily: "'Lato', sans-serif" }}>
+          <p className="text-gray-600 text-lg sm:text-xl" style={{ fontFamily: "'Lato', sans-serif" }}>
             {isSearching ? `Found ${searchResults.length} items matching your search` : "Discover All Our Delicious Offerings"}
           </p>
         </motion.div>
@@ -98,8 +98,8 @@ const OurMenu = ({ searchQuery = '' }) => {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${
                   activeCategory === cat 
-                    ? "bg-gradient-to-r from-[#FF4C29] to-[#FFD369] text-white shadow-lg shadow-[#FF4C29]/30" 
-                    : "backdrop-blur-xl bg-white/5 border border-white/10 text-[#B3B3B3] hover:text-[#F5F5F5] hover:border-[#FFD369]/50"
+                    ? "bg-gradient-to-r from-pink-400 to-yellow-300 text-white shadow-lg" 
+                    : "backdrop-blur-xl bg-white/50 border border-gray-200 text-gray-700 hover:text-gray-900 hover:border-pink-300"
                 }`}
                 style={{ fontFamily: "'Lato', sans-serif" }}
               >
@@ -124,57 +124,54 @@ const OurMenu = ({ searchQuery = '' }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -5 }}
-                className="bg-gradient-to-br from-[#2a2a2a] to-[#1e1e1e] rounded-2xl shadow-xl overflow-hidden border border-white/5 hover:border-[#FFD369]/30 transition-all duration-300"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:border-pink-300 transition-all duration-300"
               >
                 {/* Image Container */}
-                <div className="relative h-56 bg-gradient-to-br from-[#1e1e1e] to-[#2a2a2a] flex items-center justify-center p-4 overflow-hidden group">
+                <div className="relative h-56 flex items-center justify-center p-4 overflow-hidden group">
                   {/* Discount Badge */}
                   {discount > 0 && (
-                    <div className="absolute top-3 left-3 bg-gradient-to-r from-[#FF4C29] to-[#FF6B35] text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg z-10 flex items-center gap-1">
+                    <div className="absolute top-3 left-3 bg-pink-400 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg z-10 flex items-center gap-1">
                       <span>{discount}% OFF</span>
                     </div>
                   )}
                   
                   {/* Rating Badge */}
-                  <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg text-xs flex items-center gap-1 z-10">
-                    <FaStar className="text-[#FFD369]" />
-                    <span className="text-white font-semibold">{item.rating || 4}</span>
+                  <div className="absolute top-3 right-3 bg-yellow-100 px-2 py-1 rounded-lg text-xs flex items-center gap-1 z-10">
+                    <FaStar className="text-yellow-500" />
+                    <span className="text-gray-800 font-semibold">{item.rating || 4}</span>
                   </div>
 
-                  {/* Image - Centered and Contained */}
+                  {/* Image */}
                   <motion.img
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                     src={buildImageUrl(item.imageUrl || item.image)}
                     alt={item.name}
-                    className="max-w-full max-h-full object-contain drop-shadow-2xl"
-                    onError={(e) => {
-                      e.target.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMyYTJhMmEiLz48cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSIjM2EzYTNhIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMiIgcng9IjgiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMjAiIGZpbGw9IiM2NjYiLz48cGF0aCBkPSJNNjAgMTQwIEwxMDAgMTAwIEwxNDAgMTQwIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHRleHQgeD0iMTAwIiB5PSIxNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5OTkiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiI+Tm8gSW1hZ2U8L3RleHQ+PC9zdmc+";
-                    }}
+                    className="max-w-full max-h-full object-contain"
                   />
 
                   {/* Hearts Badge */}
-                  <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg text-xs flex items-center gap-1 z-10">
-                    <FaHeart className="text-red-400" />
-                    <span className="text-white font-semibold">{item.hearts || 123}</span>
+                  <div className="absolute bottom-3 right-3 bg-pink-100 px-2 py-1 rounded-lg text-xs flex items-center gap-1 z-10">
+                    <FaHeart className="text-red-500" />
+                    <span className="text-gray-800 font-semibold">{item.hearts || 123}</span>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-5 space-y-3">
-                  <h3 className="text-xl font-bold text-[#F5F5F5] line-clamp-1" style={{ fontFamily: "'Lato', sans-serif" }}>{item.name}</h3>
-                  <p className="text-sm text-[#B3B3B3] line-clamp-2 min-h-[40px]" style={{ fontFamily: "'Lato', sans-serif" }}>{item.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 line-clamp-1" style={{ fontFamily: "'Lato', sans-serif" }}>{item.name}</h3>
+                  <p className="text-gray-600 text-sm line-clamp-2 min-h-[40px]" style={{ fontFamily: "'Lato', sans-serif" }}>{item.description}</p>
 
                   {/* Price and Actions */}
                   <div className="flex items-center justify-between pt-2">
                     <div className="flex flex-col">
-                      <span className="text-2xl font-bold text-[#FFD369]">
+                      <span className="text-2xl font-bold text-pink-500">
                         ₹{Number(item.price || 0).toFixed(2)}
                       </span>
                       {discount > 0 && originalPrice && (
                         <div className="flex items-center gap-2">
-                          <span className="text-sm text-gray-500 line-through">₹{Number(originalPrice).toFixed(2)}</span>
-                          <span className="text-xs text-green-400 font-semibold">Save ₹{(originalPrice - item.price).toFixed(2)}</span>
+                          <span className="text-gray-400 line-through text-sm">₹{Number(originalPrice).toFixed(2)}</span>
+                          <span className="text-green-500 font-semibold text-xs">Save ₹{(originalPrice - item.price).toFixed(2)}</span>
                         </div>
                       )}
                     </div>
@@ -184,7 +181,7 @@ const OurMenu = ({ searchQuery = '' }) => {
                         <motion.div 
                           initial={{ scale: 0.8 }}
                           animate={{ scale: 1 }}
-                          className="flex items-center gap-2 bg-gradient-to-r from-[#FF4C29] to-[#FFD369] rounded-full px-3 py-1.5 shadow-lg"
+                          className="flex items-center gap-2 bg-gradient-to-r from-pink-400 to-yellow-300 rounded-full px-3 py-1.5 shadow-lg"
                         >
                           <motion.button
                             whileHover={{ scale: 1.2 }}
@@ -209,7 +206,7 @@ const OurMenu = ({ searchQuery = '' }) => {
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           onClick={() => addToCart(item, 1)}
-                          className="bg-gradient-to-r from-[#FF4C29] to-[#FFD369] text-white px-4 py-2 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300"
+                          className="bg-gradient-to-r from-pink-400 to-yellow-300 text-white px-4 py-2 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300"
                         >
                           Add To Cart
                         </motion.button>

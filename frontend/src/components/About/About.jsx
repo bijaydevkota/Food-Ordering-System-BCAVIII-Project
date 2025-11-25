@@ -5,9 +5,8 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const About = () => {
-
   return (
-    <div className="bg-[rgb(31,18,10)] text-gray-200">
+    <div className="bg-white text-gray-900">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
@@ -16,8 +15,8 @@ const About = () => {
         className="relative text-center py-20 px-6 overflow-hidden"
       >
         {/* Animated Background Elements */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-l from-red-500/10 to-yellow-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-yellow-200/40 to-pink-200/40 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-l from-red-200/40 to-yellow-200/40 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         
         <div className="relative z-10 max-w-4xl mx-auto">
           <motion.h1 
@@ -27,7 +26,7 @@ const About = () => {
             className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            <span className="block bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(255,193,7,0.3)]">
+            <span className="block bg-gradient-to-r from-pink-400 via-yellow-400 to-green-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(252,211,77,0.3)]">
               Culinary Express
             </span>
           </motion.h1>
@@ -39,7 +38,7 @@ const About = () => {
             className="space-y-4"
           >
             <motion.h2 
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2"
               style={{ fontFamily: "'Lato', sans-serif" }}
             >
               Satisfying Cravings, Speeding Happiness.
@@ -84,7 +83,7 @@ const About = () => {
               {[...Array(5)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"
+                  className="w-2 h-2 bg-gradient-to-r from-pink-400 to-yellow-400 rounded-full"
                   animate={{ 
                     scale: [1, 1.5, 1],
                     opacity: [0.5, 1, 0.5]
@@ -113,7 +112,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2, duration: 0.6 }}
-                className="bg-gray-800/60 p-6 rounded-2xl shadow-lg hover:shadow-yellow-500/20 transition"
+                className="bg-white/80 p-6 rounded-2xl shadow-lg hover:shadow-pink-300/50 transition"
               >
                 <motion.img
                   src={f.img}
@@ -125,11 +124,11 @@ const About = () => {
                 />
                 <div className="flex items-center gap-3 mb-2">
                   <motion.div whileHover={{ rotate: 15 }}>
-                    <Icon className="text-yellow-400 text-2xl" />
+                    <Icon className="text-pink-400 text-2xl" />
                   </motion.div>
-                  <h3 className="text-xl font-semibold">{f.title}</h3>
+                  <h3 className="text-xl font-semibold text-gray-800">{f.title}</h3>
                 </div>
-                <p className="text-gray-400">{f.text}</p>
+                <p className="text-gray-600">{f.text}</p>
               </motion.div>
             );
           })}
@@ -144,7 +143,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-4xl font-bold mb-12"
           >
-            Meet Our <span className="text-yellow-500">Artists</span>
+            Meet Our <span className="text-pink-400">Artists</span>
           </motion.h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {teamMembers.map((m, i) => (
@@ -154,7 +153,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: m.delay }}
-                className="bg-gray-800/60 rounded-2xl overflow-hidden shadow-lg group hover:shadow-yellow-500/20 transition"
+                className="bg-white/80 rounded-2xl overflow-hidden shadow-lg group hover:shadow-pink-300/50 transition"
               >
                 <div className="overflow-hidden">
                   <motion.img
@@ -166,11 +165,9 @@ const About = () => {
                   />
                 </div>
                 <div className="p-6 text-left">
-                  <h3 className="text-xl font-semibold text-white">
-                    {m.name}
-                  </h3>
-                  <p className="text-yellow-400 text-sm mb-3">{m.role}</p>
-                  <p className="text-gray-400 text-sm mb-4">{m.bio}</p>
+                  <h3 className="text-xl font-semibold text-gray-900">{m.name}</h3>
+                  <p className="text-pink-400 text-sm mb-3">{m.role}</p>
+                  <p className="text-gray-600 text-sm mb-4">{m.bio}</p>
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
@@ -182,7 +179,7 @@ const About = () => {
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-yellow-400 transition"
+                        className="text-gray-600 hover:text-pink-400 transition"
                       >
                         {
                           {

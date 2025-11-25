@@ -7,9 +7,8 @@ import { GiChefToque, GiFoodTruck } from 'react-icons/gi';
 import IA1 from './IA1.png';
 import IA2 from './IA2.png';
 import IA3 from './IA3.png';
-import IA4 from './IA4.jpg';
-import IA5 from './IA5.jpg';
-import IA6 from './IA6.jpg';
+import IA4 from './bijay.jpg';
+import IA6 from './ronish.jpg';
 
 import Kebab from "./Kebab.png";
 import ChickenTikka from "./ChickenTikka.png";
@@ -20,7 +19,8 @@ import MasalaDosa from "./MasalaDosa.png";
 import PaneerTikka from "./PannerTikka.png";
 import PalakPaneer from "./PalakPaneer.png";
 
-import BannerImage from "./BannerImage.jpg";
+import BannerImage from "./petpuja.jpg";
+import BannerImage2 from "./image1.jpg";
 import Image1 from "./Image1.png";
 import Image2 from "./Image2.png";
 import Image3 from "./Image3.png";
@@ -54,42 +54,30 @@ export const features = [
 
 export const teamMembers = [
     {
-        name: "Nilesh Karn",
-        role: "Executive Chef",
+        name: "Bijay Devkota",
+        role: "General Managar",
         img: IA4,
-        bio: "3 Michelin stars | Italian cuisine specialist",
+        bio: "Experience - More than 5 years in cafe.",
         delay: 0.1,
         social: {
-            twitter: "https://x.com/?lang=en",
-            instagram: "https://www.instagram.com/",
-            facebook: "https://www.facebook.com/",
-            linkedin: "https://www.linkedin.com/",
+            twitter: "https://www.facebook.com/bijay.devkota.967/",
+            instagram: "https://www.facebook.com/bijay.devkota.967/",
+            facebook: "https://www.facebook.com/bijay.devkota.967/",
+            linkedin: "https://www.facebook.com/bijay.devkota.967/",
         },
     },
+    
     {
-        name: "Paras Subedi",
-        role: "Pastry Chef",
-        img: IA5,
-        bio: "World Baking Champion | French desserts expert",
-        delay: 0.3,
-        social: {
-            twitter: "https://x.com/?lang=en",
-            instagram: "https://www.instagram.com/",
-            facebook: "https://www.facebook.com/",
-            linkedin: "https://www.linkedin.com/",
-        },
-    },
-    {
-        name: "Shishir Gautam",
-        role: "Sushi Chef",
+        name: "Ronish Prajapati",
+        role: "Operating Manager",
         img: IA6,
-        bio: "5th generation sushi chef | Traditional techniques",
+        bio: "Experience - More than 3 years in restaurant.",
         delay: 0.5,
         social: {
-            twitter: "https://x.com/?lang=en",
-            instagram: "https://www.instagram.com/",
-            facebook: "https://www.facebook.com/",
-            linkedin: "https://www.linkedin.com/",
+            twitter: "https://www.facebook.com/ronish.prajapati.37",
+            instagram: "https://www.facebook.com/ronish.prajapati.37",
+            facebook: "https://www.facebook.com/ronish.prajapati.37",
+            linkedin: "https://www.facebook.com/ronish.prajapati.37",
         },
     },
 ];
@@ -123,10 +111,10 @@ export const additionalData = [
 
 // FOOTER 
 export const socialIcons = [
-    { icon: FaFacebook, link: 'https://www.facebook.com/TRIOTRICK30', color: '#3b5998', label: 'Facebook' },
-    { icon: FaInstagram, link: 'https://www.instagram.com/triotrick30?igsh=MTh0b25zdnAxOGNtZw==', color: '#E1306C', label: 'Instagram' },
+    { icon: FaFacebook, link: 'https://www.facebook.com/petpuja2020', color: '#3b5998', label: 'Facebook' },
+    { icon: FaInstagram, link: 'https://www.facebook.com/petpuja2020', color: '#E1306C', label: 'Instagram' },
     
-    { icon: FaYoutube, link: 'https://www.youtube.com/channel/UCw2bEwP5jjUvSoihX4ZZ3tA', color: '#FF0000', label: 'Youtube' },
+    { icon: FaYoutube, link: 'https://www.facebook.com/petpuja2020', color: '#FF0000', label: 'Youtube' },
 ];
 
 // LOGIN 
@@ -145,6 +133,7 @@ export const contactFormFields = [
 // BANNER
 export const bannerAssets = {
     bannerImage: BannerImage,
+    bannerImage2: BannerImage2,
     orbitImages: [Image1, Image2, Image3, Image4],
     video: Video,
 };
