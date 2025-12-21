@@ -5,7 +5,7 @@ import validator from "validator";
 import crypto from "crypto";
 import { generatePin, sendVerificationEmail, sendPasswordResetEmail, sendOwnerApprovalRequest, sendAdminApprovedNotification } from "../utils/emailService.js";
 
-const OWNER_EMAIL = "triotrick0630@gmail.com";
+const OWNER_EMAIL = "dbijay2058@gmail.com";
 
 // create a token
 const createAdminToken = (id, email) => {
