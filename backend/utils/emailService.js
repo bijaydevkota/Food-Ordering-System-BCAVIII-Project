@@ -40,9 +40,9 @@ export const sendVerificationEmail = async (email, username, pin) => {
     const transporter = createTransporter();
 
     const mailOptions = {
-      from: `"Trio Order" <${process.env.EMAIL_USER}>`,
+      from: `"Pet Puja" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: '🔐 Verify Your Email - Trio Order',
+      subject: '🔐 Verify Your Email - Pet Puja',
       html: `
         <!DOCTYPE html>
         <html>
@@ -113,7 +113,7 @@ export const sendVerificationEmail = async (email, username, pin) => {
         <body>
           <div class="container">
             <div class="header">
-              <div class="logo">🍕 Trio Order</div>
+              <div class="logo">Pet Puja</div>
               <h2 style="color: #F5F5F5; margin-top: 10px;">Welcome, ${username}!</h2>
             </div>
             
@@ -138,7 +138,7 @@ export const sendVerificationEmail = async (email, username, pin) => {
             </p>
             
             <div class="footer">
-              <p>© 2025 Trio Order. All rights reserved.</p>
+              <p>© 2025 Pet Puja. All rights reserved.</p>
               <p>Delivering delicious moments to your doorstep 🚀</p>
             </div>
           </div>
@@ -176,7 +176,7 @@ export const sendOwnerApprovalRequest = async (ownerEmail, newAdminData, approva
     const rejectLink = `http://localhost:4000/api/admin/reject/${approvalToken}`;
 
     const mailOptions = {
-      from: `"Trio Order Admin System" <${process.env.EMAIL_USER}>`,
+      from: `"Pet Puja Admin System" <${process.env.EMAIL_USER}>`,
       to: ownerEmail,
       subject: '🔔 New Admin Registration Request - Action Required',
       html: `
@@ -277,7 +277,7 @@ export const sendOwnerApprovalRequest = async (ownerEmail, newAdminData, approva
         <body>
           <div class="container">
             <div class="header">
-              <div class="logo">🍕 Trio Order</div>
+              <div class="logo">PetPuja</div>
               <h2 style="color: #F5F5F5; margin-top: 10px;">New Admin Registration</h2>
             </div>
             
@@ -286,7 +286,7 @@ export const sendOwnerApprovalRequest = async (ownerEmail, newAdminData, approva
             </p>
             
             <p style="color: #B3B3B3; line-height: 1.8;">
-              A new administrator has requested access to the Trio Order admin panel. 
+              A new administrator has requested access to the PetPuja admin panel. 
               Please review their details below:
             </p>
             
@@ -324,7 +324,7 @@ export const sendOwnerApprovalRequest = async (ownerEmail, newAdminData, approva
             </div>
             
             <div class="footer">
-              <p>© 2025 Trio Order Admin System. All rights reserved.</p>
+              <p>© 2025 PetPuja Admin System. All rights reserved.</p>
               <p>This is an automated security notification.</p>
             </div>
           </div>
@@ -355,7 +355,7 @@ export const sendAdminApprovedNotification = async (email, username, pin) => {
     const transporter = createTransporter();
 
     const mailOptions = {
-      from: `"Trio Order" <${process.env.EMAIL_USER}>`,
+      from: `"Pet Puja" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: '✅ Admin Account Approved - Verify Your Email',
       html: `
@@ -436,7 +436,7 @@ export const sendAdminApprovedNotification = async (email, username, pin) => {
         <body>
           <div class="container">
             <div class="header">
-              <div class="logo">🍕 Trio Order</div>
+              <div class="logo">Pet Puja</div>
               <h2 style="color: #F5F5F5; margin-top: 10px;">Congratulations, ${username}!</h2>
             </div>
             
@@ -454,7 +454,7 @@ export const sendAdminApprovedNotification = async (email, username, pin) => {
             <div class="pin-box">${pin}</div>
             
             <p class="message">
-              Enter this PIN on the verification page to activate your admin account and start managing the Trio Order platform.
+              Enter this PIN on the verification page to activate your admin account and start managing the Pet Puja platform.
             </p>
             
             <div class="warning">
@@ -463,11 +463,11 @@ export const sendAdminApprovedNotification = async (email, username, pin) => {
             </div>
             
             <p class="message">
-              Welcome to the Trio Order admin team! 🎉
+              Welcome to the Pet Puja admin team! 🎉
             </p>
             
             <div class="footer">
-              <p>© 2025 Trio Order. All rights reserved.</p>
+              <p>© 2025 Pet Puja. All rights reserved.</p>
               <p>Delivering delicious moments to your doorstep 🚀</p>
             </div>
           </div>
@@ -494,9 +494,9 @@ export const sendPasswordResetEmail = async (email, username, pin) => {
     const transporter = createTransporter();
 
     const mailOptions = {
-      from: `"Trio Order" <${process.env.EMAIL_USER}>`,
+      from: `"Pet Puja" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: '🔑 Reset Your Password - Trio Order',
+      subject: '🔑 Reset Your Password - Pet Puja',
       html: `
         <!DOCTYPE html>
         <html>
@@ -567,7 +567,7 @@ export const sendPasswordResetEmail = async (email, username, pin) => {
         <body>
           <div class="container">
             <div class="header">
-              <div class="logo">🍕 Trio Order</div>
+              <div class="logo">Pet Puja</div>
               <h2 style="color: #F5F5F5; margin-top: 10px;">Password Reset Request</h2>
             </div>
             
@@ -595,7 +595,7 @@ export const sendPasswordResetEmail = async (email, username, pin) => {
             </p>
             
             <div class="footer">
-              <p>© 2025 Trio Order. All rights reserved.</p>
+              <p>© 2025 Pet Puja. All rights reserved.</p>
               <p>Delivering delicious moments to your doorstep 🚀</p>
             </div>
           </div>

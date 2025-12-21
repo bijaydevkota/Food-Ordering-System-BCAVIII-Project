@@ -119,8 +119,8 @@ const Contact = () => {
                 <FiMapPin className="text-white text-xl" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: "'Lato', sans-serif" }}>Our Headquarter</h3>
-                <p className="text-gray-700" style={{ fontFamily: "'Lato', sans-serif" }}>Kathmandu, Nepal</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: "'Lato', sans-serif" }}>Our Location</h3>
+                <p className="text-gray-700" style={{ fontFamily: "'Lato', sans-serif" }}>Shankhamul, Nepal</p>
               </div>
             </motion.div>
 
@@ -138,7 +138,7 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: "'Lato', sans-serif" }}>Contact Number</h3>
                 <p className="text-gray-700 flex items-center gap-2" style={{ fontFamily: "'Lato', sans-serif" }}>
-                  <FiGlobe /> +977 9862626262
+                  <FiGlobe /> +977 9866338344
                 </p>
               </div>
             </motion.div>
@@ -156,7 +156,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: "'Lato', sans-serif" }}>Email Address</h3>
-                <p className="text-gray-700" style={{ fontFamily: "'Lato', sans-serif" }}>triotrick30@gmail.com</p>
+                <p className="text-gray-700" style={{ fontFamily: "'Lato', sans-serif" }}>dbijay2058@gmail.com</p>
               </div>
             </motion.div>
           </div>

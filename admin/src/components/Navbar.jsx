@@ -76,11 +76,9 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="p-1.5 sm:p-2 bg-gradient-to-br from-[#FF4C29] to-[#FF6B35] rounded-lg sm:rounded-xl shadow-lg">
-                <GiChefToque className="text-lg sm:text-xl lg:text-2xl text-white" />
-              </div>
-              <span className="text-base sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-[#FF4C29] to-[#FFD369] bg-clip-text text-transparent whitespace-nowrap">
-                Admin Panel
+             
+              <span className="text-base sm:text-lg lg:text-2xl font-bold bg-gradient-to-r from-[#FF4C29] to-[#FFD369] bg-clip-text text-transparent whitespace-nowrap">
+                PetPuja
               </span>
             </motion.div>
 

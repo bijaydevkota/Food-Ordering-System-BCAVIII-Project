@@ -143,7 +143,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-4xl font-bold mb-12"
           >
-            Meet Our <span className="text-pink-400">Artists</span>
+            Meet Our <span className="text-pink-400">Founders</span>
           </motion.h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {teamMembers.map((m, i) => (

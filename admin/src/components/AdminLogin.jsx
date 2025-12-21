@@ -94,13 +94,8 @@ const AdminLogin = () => {
           className="text-center mb-8"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <motion.div
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-            >
-              <GiChefToque className="text-5xl text-[#FF4C29]" />
-            </motion.div>
-            <span className="text-3xl font-bold bg-gradient-to-r from-[#FF4C29] to-[#FFD369] bg-clip-text text-transparent">Admin Panel</span>
+            
+            <span className="text-3xl font-bold bg-gradient-to-r from-[#FF4C29] to-[#FFD369] bg-clip-text text-transparent">Pet Puja</span>
           </div>
           <h2 className="text-xl text-[#B3B3B3]">Sign in to manage orders</h2>
         </motion.div>
