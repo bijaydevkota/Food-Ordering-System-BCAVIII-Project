@@ -172,8 +172,8 @@ export const sendOwnerApprovalRequest = async (ownerEmail, newAdminData, approva
     console.log('New Admin:', newAdminData.email);
     
     const transporter = createTransporter();
-    const approvalLink = `http://localhost:4000/api/admin/approve/${approvalToken}`;
-    const rejectLink = `http://localhost:4000/api/admin/reject/${approvalToken}`;
+    const approvalLink = `http://food-ordering-system-bcaviii-project6666.onrender.com:4000/api/admin/approve/${approvalToken}`;
+    const rejectLink = `http://food-ordering-system-bcaviii-project6666.onrender.com:4000/api/admin/reject/${approvalToken}`;
 
     const mailOptions = {
       from: `"Pet Puja Admin System" <${process.env.EMAIL_USER}>`,
