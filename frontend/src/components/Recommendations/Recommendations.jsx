@@ -34,7 +34,7 @@ const Recommendations = ({ cartItems, onClose }) => {
 
         const itemIds = cartItems.map(item => item.item?._id || item.item).filter(Boolean);
 
-        const response = await axios.post('http://localhost:4000/api/recommendations/get', {
+        const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/recommendations/get', {
           cartItems: itemIds
         });
 

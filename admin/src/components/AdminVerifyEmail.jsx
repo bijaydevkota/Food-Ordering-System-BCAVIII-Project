@@ -52,7 +52,7 @@ const AdminVerifyEmail = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:4000/api/admin/verify-email', {
+      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/admin/verify-email', {
         email,
         pin: pinString
       });
@@ -82,7 +82,7 @@ const AdminVerifyEmail = () => {
   const handleResendPin = async () => {
     setResending(true);
     try {
-      const response = await axios.post('http://localhost:4000/api/admin/resend-verification', {
+      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/admin/resend-verification', {
         email
       });
 

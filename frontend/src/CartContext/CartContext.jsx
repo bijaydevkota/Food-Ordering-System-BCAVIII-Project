@@ -1,7 +1,7 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useReducer } from "react";
 import axios from "axios";
 
-const API_BASE = "http://localhost:4000";
+const API_BASE = "http://food-ordering-system-bcaviii-project6666.onrender.com";
 
 // --- Context ---
 const CartContext = createContext({

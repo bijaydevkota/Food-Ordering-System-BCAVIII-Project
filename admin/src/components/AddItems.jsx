@@ -54,7 +54,7 @@ const AddItems = () => {
       });
 
       await axios.post(
-        'http://localhost:4000/api/items',
+        'http://https://food-ordering-system-bcaviii-project6666.onrender.com/api/items',
         payload,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );

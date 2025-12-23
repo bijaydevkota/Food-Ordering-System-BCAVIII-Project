@@ -26,7 +26,7 @@ const MyOrder = () => {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const user = JSON.parse(localStorage.getItem("user"));
-  const API_BASE = "http://localhost:4000";
+  const API_BASE = "http://food-ordering-system-bcaviii-project6666.onrender.com";
 
   const buildImageUrl = (path) => {
     if (!path) return "https://via.placeholder.com/100?text=No+Image";

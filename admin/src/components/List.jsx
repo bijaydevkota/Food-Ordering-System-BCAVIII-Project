@@ -17,7 +17,7 @@ const List = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const { data } = await axios.get("http://localhost:4000/api/items");
+        const { data } = await axios.get("http://food-ordering-system-bcaviii-project6666.onrender.com/api/items");
         setItems(data);
       } catch (err) {
         console.error("Error fetching Items:", err);
@@ -45,7 +45,7 @@ const List = () => {
     
     setIsDeleting(true);
     try {
-      await axios.delete(`http://localhost:4000/api/items/${itemToDelete._id}`);
+      await axios.delete(`http://food-ordering-system-bcaviii-project6666.onrender.com/api/items/${itemToDelete._id}`);
       setItems((prev) => prev.filter((item) => item._id !== itemToDelete._id));
       showSuccess(
         'Item Deleted Successfully',

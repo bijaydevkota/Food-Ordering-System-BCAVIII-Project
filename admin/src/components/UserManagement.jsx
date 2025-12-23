@@ -32,7 +32,7 @@ const UserManagement = () => {
       
       console.log('Fetching users with token:', token.substring(0, 20) + '...');
       
-      const response = await fetch('http://localhost:4000/api/user/all', {
+      const response = await fetch('http://food-ordering-system-bcaviii-project6666.onrender.com/api/user/all', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ const UserManagement = () => {
       
       console.log('Toggling status for user:', userId);
       
-      const response = await fetch('http://localhost:4000/api/user/toggle-status', {
+      const response = await fetch('http://food-ordering-system-bcaviii-project6666.onrender.com/api/user/toggle-status', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

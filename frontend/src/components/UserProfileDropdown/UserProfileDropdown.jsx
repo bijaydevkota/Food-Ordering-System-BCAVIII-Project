@@ -47,7 +47,7 @@ const UserProfileDropdown = () => {
       formData.append('profilePhoto', file);
 
       const token = localStorage.getItem('authToken');
-      const response = await axios.put('http://localhost:4000/api/user/profile-photo', formData, {
+      const response = await axios.put('http://food-ordering-system-bcaviii-project6666.onrender.com/api/user/profile-photo', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -82,7 +82,7 @@ const UserProfileDropdown = () => {
         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-yellow-300 flex items-center justify-center text-white font-semibold text-sm overflow-hidden">
           {profilePhoto ? (
             <img
-              src={`http://localhost:4000${profilePhoto}`}
+              src={`http://food-ordering-system-bcaviii-project6666.onrender.com${profilePhoto}`}
               alt="Profile"
               className="w-full h-full object-cover"
               onError={(e) => {
@@ -114,7 +114,7 @@ const UserProfileDropdown = () => {
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-yellow-300 flex items-center justify-center text-white font-bold text-xl overflow-hidden">
                   {profilePhoto ? (
                     <img
-                      src={`http://localhost:4000${profilePhoto}`}
+                      src={`http://food-ordering-system-bcaviii-project6666.onrender.com${profilePhoto}`}
                       alt="Profile"
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -215,7 +215,7 @@ const UserProfileDropdown = () => {
               <div className="w-48 h-48 rounded-2xl overflow-hidden bg-gradient-to-br from-pink-400 to-yellow-300 flex items-center justify-center text-white text-4xl font-bold">
                 {profilePhoto ? (
                   <img
-                    src={`http://localhost:4000${profilePhoto}`}
+                    src={`http://food-ordering-system-bcaviii-project6666.onrender.com${profilePhoto}`}
                     alt="Profile Preview"
                     className="w-full h-full object-cover"
                     onError={(e) => { e.target.style.display = 'none'; }}

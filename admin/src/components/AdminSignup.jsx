@@ -46,7 +46,7 @@ const AdminSignup = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:4000/api/admin/register', {
+      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/admin/register', {
         username: formData.username,
         email: formData.email,
         password: formData.password

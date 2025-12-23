@@ -22,7 +22,7 @@ const AdminForgotPassword = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:4000/api/admin/forgot-password', { email });
+      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/admin/forgot-password', { email });
 
       if (response.data.success) {
         showSuccess(response.data.message);
@@ -53,7 +53,7 @@ const AdminForgotPassword = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:4000/api/admin/verify-reset-pin', { email, pin: pinString });
+      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/admin/verify-reset-pin', { email, pin: pinString });
 
       if (response.data.success) {
         showSuccess(response.data.message);
@@ -89,7 +89,7 @@ const AdminForgotPassword = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:4000/api/admin/reset-password', {
+      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/admin/reset-password', {
         email,
         pin: pin.join(''),
         newPassword
@@ -130,7 +130,7 @@ const AdminForgotPassword = () => {
   const handleResendPin = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:4000/api/admin/forgot-password', { email });
+      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/admin/forgot-password', { email });
 
       if (response.data.success) {
         showSuccess('New PIN sent to your email');
