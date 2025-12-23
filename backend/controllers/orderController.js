@@ -1,6 +1,6 @@
 import "dotenv/config";
 import Stripe from "stripe";
-import Order from "../models/orderModel.js";
+import Order from "../models/ordermodel.js";
 import Notification from "../models/notificationModel.js";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
