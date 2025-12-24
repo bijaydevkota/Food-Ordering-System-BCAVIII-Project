@@ -24,7 +24,7 @@ const __dirname = path.dirname(__filename);
 app.use(
   cors({
     origin: (origin, callback) => {
-      const allowedOrigin = ["http://localhost:5173", "http://localhost:5174", "http://localhost:3000"];
+      const allowedOrigin = ["http://localhost:5173", "http://localhost:5174", "http://localhost:3000","https://food-ordering-system-bcaviii-projec.vercel.app","https://food-ordering-system-bcaviii-projec-five.vercel.app/admin-login"];
       if (!origin || allowedOrigin.includes(origin)) {
         callback(null, true);
       } else {
