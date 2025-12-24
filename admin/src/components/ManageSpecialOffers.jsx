@@ -39,7 +39,7 @@ const ManageSpecialOffers = () => {
     const fetchItems = async () => {
       try {
         const token = localStorage.getItem('token');
-        const { data } = await axios.get('http://food-ordering-system-bcaviii-project6666.onrender.com/api/items', {
+        const { data } = await axios.get('http://localhost:4000/api/items', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setItems(data);
@@ -55,7 +55,7 @@ const ManageSpecialOffers = () => {
     const fetchSpecialOffers = async () => {
       try {
         const token = localStorage.getItem('token');
-        const { data } = await axios.get('http://food-ordering-system-bcaviii-project6666.onrender.com/api/special-offers', {
+        const { data } = await axios.get('http://localhost:4000/api/special-offers', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setSpecialOffers(data);
@@ -109,14 +109,14 @@ const ManageSpecialOffers = () => {
       console.log('Payload created, sending request...');
 
       if (editingOffer) {
-        await axios.put(`http://food-ordering-system-bcaviii-project6666.onrender.com/api/special-offers/${editingOffer._id}`, payload, {
+        await axios.put(`http://localhost:4000/api/special-offers/${editingOffer._id}`, payload, {
           headers: { 
             'Content-Type': 'multipart/form-data',
             Authorization: `Bearer ${token}`
           }
         });
       } else {
-        await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/special-offers', payload, {
+        await axios.post('http://localhost:4000/api/special-offers', payload, {
           headers: { 
             'Content-Type': 'multipart/form-data',
             Authorization: `Bearer ${token}`
@@ -127,7 +127,7 @@ const ManageSpecialOffers = () => {
       console.log('Request successful, refreshing data...');
       // Reset form and refresh data
       resetForm();
-      const { data } = await axios.get('http://food-ordering-system-bcaviii-project6666.onrender.com/api/special-offers', {
+      const { data } = await axios.get('http://localhost:4000/api/special-offers', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSpecialOffers(data);
@@ -196,7 +196,7 @@ const ManageSpecialOffers = () => {
     setIsDeleting(true);
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://food-ordering-system-bcaviii-project6666.onrender.com/api/special-offers/${offerToDelete._id}`, {
+      await axios.delete(`http://localhost:4000/api/special-offers/${offerToDelete._id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSpecialOffers(prev => prev.filter(offer => offer._id !== offerToDelete._id));
@@ -227,7 +227,7 @@ const ManageSpecialOffers = () => {
   const handleToggleStatus = async (offerId) => {
     try {
       const token = localStorage.getItem('token');
-      const { data } = await axios.patch(`http://food-ordering-system-bcaviii-project6666.onrender.com/api/special-offers/${offerId}/toggle`, {}, {
+      const { data } = await axios.patch(`http://localhost:4000/api/special-offers/${offerId}/toggle`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSpecialOffers(prev => prev.map(offer => 

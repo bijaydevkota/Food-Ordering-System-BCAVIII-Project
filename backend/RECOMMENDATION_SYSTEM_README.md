@@ -147,7 +147,7 @@ const minConfidence = 0.6; // 60% minimum confidence (adjust recommendation thre
 ### Get Recommendations
 
 ```javascript
-POST http://food-ordering-system-bcaviii-project6666.onrender.com/api/recommendations/get
+POST http://localhost:4000/api/recommendations/get
 Content-Type: application/json
 
 {
@@ -174,7 +174,7 @@ Response:
 ### Train Model
 
 ```javascript
-POST http://food-ordering-system-bcaviii-project6666.onrender.com/api/recommendations/train
+POST http://localhost:4000/api/recommendations/train
 
 Response:
 {
@@ -191,7 +191,7 @@ Response:
 ### Get Statistics
 
 ```javascript
-GET http://food-ordering-system-bcaviii-project6666.onrender.com/api/recommendations/stats
+GET http://localhost:4000/api/recommendations/stats
 
 Response:
 {

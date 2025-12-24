@@ -20,7 +20,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/user/forgot-password', { email });
+      const response = await axios.post('http://localhost:4000/api/user/forgot-password', { email });
       if (response.data.success) {
         toast.success(response.data.message);
         setStep(2);
@@ -46,7 +46,7 @@ const ForgotPassword = () => {
     }
     setLoading(true);
     try {
-      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/user/verify-reset-pin', { email, pin: pinString });
+      const response = await axios.post('http://localhost:4000/api/user/verify-reset-pin', { email, pin: pinString });
       if (response.data.success) {
         toast.success(response.data.message);
         setStep(3);
@@ -67,7 +67,7 @@ const ForgotPassword = () => {
     if (newPassword.length < 8) return toast.error('Password must be at least 8 characters long');
     setLoading(true);
     try {
-      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/user/reset-password', {
+      const response = await axios.post('http://localhost:4000/api/user/reset-password', {
         email,
         pin: pin.join(''),
         newPassword
@@ -100,7 +100,7 @@ const ForgotPassword = () => {
   const handleResendPin = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/user/forgot-password', { email });
+      const response = await axios.post('http://localhost:4000/api/user/forgot-password', { email });
       if (response.data.success) {
         toast.success('New PIN sent to your email');
         setPin(['', '', '', '', '', '']);

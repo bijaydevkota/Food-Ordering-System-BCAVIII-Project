@@ -104,7 +104,7 @@ const Order = () => {
         throw new Error('No authentication token found');
       }
 
-      const response = await axios.get('http://food-ordering-system-bcaviii-project6666.onrender.com/api/orders/getall', {
+      const response = await axios.get('http://localhost:4000/api/orders/getall', {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -174,7 +174,7 @@ const Order = () => {
         throw new Error('No authentication token found');
       }
 
-      const response = await axios.delete(`http://food-ordering-system-bcaviii-project6666.onrender.com/api/orders/getall/${orderToDelete._id}`, {
+      const response = await axios.delete(`http://localhost:4000/api/orders/getall/${orderToDelete._id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -224,7 +224,7 @@ const Order = () => {
         throw new Error('No authentication token found');
       }
 
-      const response = await axios.put(`http://food-ordering-system-bcaviii-project6666.onrender.com/api/orders/getall/${orderId}`, {
+      const response = await axios.put(`http://localhost:4000/api/orders/getall/${orderId}`, {
         status: newStatus,
       }, {
         headers: { Authorization: `Bearer ${token}` }
@@ -932,7 +932,7 @@ const Order = () => {
                           src={item.item.imageUrl ? 
                             (item.item.imageUrl.startsWith('http') ? 
                               item.item.imageUrl : 
-                              `http://food-ordering-system-bcaviii-project6666.onrender.com${item.item.imageUrl}`) : 
+                              `http://localhost:4000${item.item.imageUrl}`) : 
                             "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMyYTJhMmEiLz48cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSIjM2EzYTNhIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMiIgcng9IjgiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMjAiIGZpbGw9IiM2NjYiLz48cGF0aCBkPSJNNjAgMTQwIEwxMDAgMTAwIEwxNDAgMTQwIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHRleHQgeD0iMTAwIiB5PSIxNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5OTkiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiI+Tm8gSW1hZ2U8L3RleHQ+PC9zdmc+"
                           }
                           alt={item.item.name}

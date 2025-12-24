@@ -34,7 +34,7 @@ const Recommendations = ({ cartItems, onClose }) => {
 
         const itemIds = cartItems.map(item => item.item?._id || item.item).filter(Boolean);
 
-        const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/recommendations/get', {
+        const response = await axios.post('http://localhost:4000/api/recommendations/get', {
           cartItems: itemIds
         });
 
@@ -109,10 +109,10 @@ const Recommendations = ({ cartItems, onClose }) => {
           </div>
           <div>
             <h3 className="text-2xl font-bold bg-gradient-to-r from-[#FF4C29] to-[#FFD369] bg-clip-text text-transparent" style={{ fontFamily: "'Playfair Display', serif" }}>
-              {isFallback ? 'Popular Choices' : 'You Might Also Like'}
+              {isFallback ? 'Recommended Items' : 'You Might Also Like'}
             </h3>
             <p className="text-gray-600 text-sm" style={{ fontFamily: "'Lato', sans-serif" }}>
-              {isFallback ? 'Customer favorites' : 'Based on your cart items'}
+              {isFallback ? 'Best recommendations for you' : 'Based on your cart items'}
             </p>
           </div>
         </div>

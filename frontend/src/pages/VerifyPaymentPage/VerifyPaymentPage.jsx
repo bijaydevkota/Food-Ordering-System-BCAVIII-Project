@@ -30,7 +30,7 @@ const VerifyPaymentPage = () => {
 
     // Case 2: Stripe success
     axios
-      .get("http://food-ordering-system-bcaviii-project6666.onrender.com/api/orders/confirm", {
+      .get("http://localhost:4000/api/orders/confirm", {
         params: { session_id },
         headers: authHeaders,
       })

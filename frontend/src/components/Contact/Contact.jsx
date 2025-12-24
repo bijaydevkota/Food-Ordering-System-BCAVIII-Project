@@ -17,7 +17,7 @@ const Contact = () => {
 
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/contact/submit', {
+      const response = await axios.post('http://localhost:4000/api/contact/submit', {
         fullName: formData.name,
         phoneNumber: formData.phone,
         email: formData.email,

@@ -26,7 +26,7 @@ export const NotificationProvider = ({ children }) => {
         return;
       }
 
-      const response = await axios.get('http://food-ordering-system-bcaviii-project6666.onrender.com/api/notifications', {
+      const response = await axios.get('http://localhost:4000/api/notifications', {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -49,7 +49,7 @@ export const NotificationProvider = ({ children }) => {
       if (!token) return;
 
       const response = await axios.put(
-        `http://food-ordering-system-bcaviii-project6666.onrender.com/api/notifications/${notificationId}/read`,
+        `http://localhost:4000/api/notifications/${notificationId}/read`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -76,7 +76,7 @@ export const NotificationProvider = ({ children }) => {
       if (!token) return;
 
       const response = await axios.put(
-        'http://food-ordering-system-bcaviii-project6666.onrender.com/api/notifications/read-all',
+        'http://localhost:4000/api/notifications/read-all',
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -98,7 +98,7 @@ export const NotificationProvider = ({ children }) => {
       if (!token) return;
 
       const response = await axios.delete(
-        `http://food-ordering-system-bcaviii-project6666.onrender.com/api/notifications/${notificationId}`,
+        `http://localhost:4000/api/notifications/${notificationId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
