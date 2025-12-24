@@ -7,7 +7,7 @@ import { CartProvider } from './CartContext/CartContext.jsx'
 import { NotificationProvider } from './NotificationContext/NotificationContext.jsx'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
+// test
 createRoot(document.getElementById('root')).render(
   <CartProvider>
     <NotificationProvider>
