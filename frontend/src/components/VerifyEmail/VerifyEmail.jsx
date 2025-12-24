@@ -50,7 +50,7 @@ const VerifyEmail = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com:4000/api/user/verify-email', { email, pin: pinString });
+      const response = await axios.post('http://localhost:4000/api/user/verify-email', { email, pin: pinString });
       if (response.data.success) {
         toast.success(response.data.message);
         localStorage.setItem('authToken', response.data.token);
@@ -73,7 +73,7 @@ const VerifyEmail = () => {
   const handleResendPin = async () => {
     setResending(true);
     try {
-      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/user/resend-verification', { email });
+      const response = await axios.post('http://localhost:4000/ser/resend-verification', { email });
       if (response.data.success) {
         toast.success(response.data.message);
         setPin(['', '', '', '', '', '']);

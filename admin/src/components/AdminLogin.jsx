@@ -30,7 +30,7 @@ const AdminLogin = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://food-ordering-system-bcaviii-project6666.onrender.com/api/admin/login', {
+      const response = await axios.post('http://localhost:4000/api/admin/login', {
         email: formData.email,
         password: formData.password
       });

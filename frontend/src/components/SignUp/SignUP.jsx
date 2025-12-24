@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { FaArrowLeft, FaCheckCircle, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 
-const url = 'http://food-ordering-system-bcaviii-project6666.onrender.com';
+const url = 'http://localhost:4000';
 
 // Toast Component
 const AwesomeToast = ({ message, icon, isError }) => (

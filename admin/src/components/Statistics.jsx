@@ -34,7 +34,7 @@ const Statistics = () => {
         throw new Error('No authentication token found');
       }
 
-      const response = await axios.get('http://food-ordering-system-bcaviii-project6666.onrender.com/api/orders/statistics', {
+      const response = await axios.get('http://localhost:4000/api/orders/statistics', {
         headers: { Authorization: `Bearer ${token}` }
       });
 

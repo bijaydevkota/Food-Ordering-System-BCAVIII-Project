@@ -21,21 +21,20 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Middleware
-// app.use(
-//   cors({
-//     origin: (origin, callback) => {
-//       const allowedOrigin = ["http://localhost:5173", "http://localhost:5174", "http://localhost:3000","https://food-ordering-system-bcaviii-projec.vercel.app","https://food-ordering-system-bcaviii-projec-five.vercel.app/admin-login"];
-//       if (!origin || allowedOrigin.includes(origin)) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error("not allowed by cors"));
-//       }
-//     },
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      const allowedOrigin = ["http://localhost:5173", "http://localhost:5174", "http://localhost:3000"];
+      if (!origin || allowedOrigin.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("not allowed by cors"));
+      }
+    },
+    credentials: true,
+  })
+);
 
-app.use(cors())
 
 // test comment
 

@@ -18,7 +18,7 @@ const Navbar = () => {
             try {
                 const token = localStorage.getItem('token');
                 if (!token) return;
-                const res = await axios.get('http://food-ordering-system-bcaviii-project6666.onrender.com/api/orders/getall', {
+                const res = await axios.get('http://localhost:4000/api/orders/getall', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 const orders = res.data?.orders || [];

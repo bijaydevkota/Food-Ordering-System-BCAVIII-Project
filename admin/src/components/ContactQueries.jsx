@@ -31,7 +31,7 @@ const ContactQueries = () => {
     try {
       const token = localStorage.getItem('token');
       
-      const response = await axios.get('http://food-ordering-system-bcaviii-project6666.onrender.com/api/contact/all', {
+      const response = await axios.get('http://localhost:4000/api/contact/all', {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -50,7 +50,7 @@ const ContactQueries = () => {
   const updateQueryStatus = async (id, status, adminNotes = '') => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.put(`http://food-ordering-system-bcaviii-project6666.onrender.com/api/contact/${id}/status`, {
+      const response = await axios.put(`http://localhost:4000/api/contact/${id}/status`, {
         status,
         adminNotes
       }, {
@@ -80,7 +80,7 @@ const ContactQueries = () => {
     setIsDeleting(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.delete(`http://food-ordering-system-bcaviii-project6666.onrender.com/api/contact/${queryToDelete._id}`, {
+      const response = await axios.delete(`http://localhost:4000/api/contact/${queryToDelete._id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 

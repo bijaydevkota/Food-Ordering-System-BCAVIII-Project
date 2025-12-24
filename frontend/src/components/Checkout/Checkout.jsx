@@ -4,7 +4,7 @@ import { FaArrowLeft, FaLock } from "react-icons/fa";
 import { useCart } from "../../CartContext/CartContext";
 import axios from "axios";
 
-const API_BASE = "http://food-ordering-system-bcaviii-project6666.onrender.com";
+const API_BASE = "http://localhost:4000";
 
 const Checkout = () => {
   const { totalAmount, cartItems, clearCart } = useCart();
